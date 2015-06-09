@@ -1,10 +1,10 @@
 package br.com.idtrust.sdk.icarta.test.unit;
 
-import br.com.idtrust.sdk.icarta.model.Recipient;
-import br.com.idtrust.sdk.icarta.model.RecipientType;
-import br.com.idtrust.sdk.icarta.model.TrackedEmail;
 import org.junit.Assert;
 import org.junit.Test;
+
+import br.com.idtrust.sdk.icarta.model.RecipientType;
+import br.com.idtrust.sdk.icarta.model.TrackedEmail;
 
 public class TrackedEmailTestCase {
 
