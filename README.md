@@ -1,5 +1,5 @@
 #Como integrar o icarta-java-sdk com sua aplicação:
-=========
+==========
 
 A implementação é bem simples, insira essa parte de código no seu sistema e altere os campos necessários.
 
