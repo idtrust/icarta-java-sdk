@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/idtrust/icarta-java-sdk/badge.svg?branch=master)](https://coveralls.io/github/idtrust/icarta-java-sdk?branch=master)
 #Como integrar o icarta-java-sdk com sua aplicação:
 ==========
 
