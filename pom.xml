@@ -57,7 +57,7 @@
                     <aggregate>true</aggregate>
                     <instrumentation>
                         <ignores>
-                            <ignore>br.com.idtrust.sdk.icarta.ws.*</ignore>
+                            <ignore>br.com.idtrust.sdk.icarta.ws.soap.v2.*</ignore>
                         </ignores>
                     </instrumentation>
                 </configuration>
