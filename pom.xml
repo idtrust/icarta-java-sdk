@@ -59,6 +59,9 @@
                         <ignores>
                             <ignore>br.com.idtrust.sdk.icarta.ws.soap.v2.*</ignore>
                         </ignores>
+                        <excludes>
+                            <exclude>br/com/idtrust/sdk/icarta/ws/soap/**/*.class</exclude>
+                        </excludes>
                     </instrumentation>
                 </configuration>
             </plugin>
