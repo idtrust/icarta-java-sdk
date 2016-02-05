@@ -55,6 +55,11 @@
                     <maxmem>256m</maxmem>
                     <!-- aggregated reports for multi-module projects -->
                     <aggregate>true</aggregate>
+                    <instrumentation>
+                        <ignores>
+                            <ignore>br.com.idtrust.sdk.icarta.ws.*</ignore>
+                        </ignores>
+                    </instrumentation>
                 </configuration>
             </plugin>
             
