@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
 public class TrackedEmail implements Serializable {
 
     private static final long serialVersionUID = 70145774783097110L;
@@ -16,11 +18,12 @@ public class TrackedEmail implements Serializable {
     private List<Attachment> attachments;
 
     public TrackedEmail from(String email) {
-        this.from = new EmailAddress(email, email);
+        from(email, email);
         return this;
     }
 
     public TrackedEmail from(String name, String email) {
+        validEmail(email);
         this.from = new EmailAddress(name, email);
         return this;
     }
@@ -33,11 +36,18 @@ public class TrackedEmail implements Serializable {
         return to(name, emailAddress, RecipientType.TO);
     }
 
-    private TrackedEmail to(String name, String emailAddress, RecipientType recipientType) {
-        Recipient recipient = new Recipient(name, emailAddress,
-                recipientType);
+    private TrackedEmail to(String name, String emailAddress,
+            RecipientType recipientType) {
+        validEmail(emailAddress);
+        Recipient recipient = new Recipient(name, emailAddress, recipientType);
         getRecipients().add(recipient);
         return this;
+    }
+
+    private void validEmail(String emailAddress) {
+        if (!EmailValidator.getInstance().isValid(emailAddress)) {
+            throw new RuntimeException("E-mail inválido: " + emailAddress);
+        }
     }
 
     public TrackedEmail withCC(String emailAddress) {
@@ -79,9 +89,8 @@ public class TrackedEmail implements Serializable {
     }
 
     public TrackedEmail withAttachment(String fileName, String contentType,
-                                       byte[] content) {
-        Attachment attachment = new Attachment(fileName,
-                contentType, content);
+            byte[] content) {
+        Attachment attachment = new Attachment(fileName, contentType, content);
         getAttachments().add(attachment);
         return this;
     }

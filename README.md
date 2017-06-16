@@ -7,14 +7,14 @@
 A implementação é bem simples, insira essa parte de código no seu sistema e altere os campos necessários.
 
             TrackedEmail trackedEmail = new TrackedEmail()
-                    .from("Email From", "from@email.com")
+                    .from("from@email.com")
                     .withUniqueId(UUID.randomUUID().toString())
                     .withSubject("Meu Assunto")
                     .withMessage("Meu texto do email")
-                    .to("Email TO", "to@email.com")
-                    .withCC("Email Copia", "copia@email.com")
-                    .withBCC("Email Copia Oculta",
-                            "oculta@email.com")
+                    .to("to@email.com")
+                    .withCC("copia@email.com")
+                    .withCC("copia2@email.com")
+                    .withBCC("oculta@email.com")
                     .withAttachment("teste.txt", "text/plain",
                             new String("algum texto").getBytes());
 
